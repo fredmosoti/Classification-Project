@@ -19,7 +19,6 @@ Classification Data: The primary dataset used for this analysis is the "dataset_
 ### Tools
 
 - Excel - Data Cleaning
-  - [Download here](https://microsoft.com)
 - RStudio - Data Analysis
 
 ### Data Cleaning/Preparation
