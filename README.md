@@ -90,5 +90,44 @@ Step-by-step breakdown:
 
 - Vector Classification: The function iterates through the input vector, classifying each element based on the threshold value. If an element is greater than the threshold, it's assigned the class 'cw', and if it's less than or equal to the threshold, it's assigned the class 'cb'
 
+#### O_Classifier:
+The O_Classifier function takes a vector of eight numeric values as input and returns a single string value representing the class of the input vector. The function uses a regularized logistic regression model to classify the input vector.
+- The function first loads the required packages: caret, glmnet, and e1071.
+- The function then reads the data from the dataset_o0.csv file into a dataframe called o_dataset. The function also renames the columns of the dataframe to reflect the feature names.
+- The function then removes any missing values from the dataframe using the na.omit() function.
+- The function then creates a train control object using the trainControl() function. The train control object specifies that the function should use 10-fold repeated cross-validation to evaluate the model.
+- The function then sets the seed for the random number generator using the set.seed() function. This ensures that the model is reproducible.
+- The function then trains a regularized logistic regression model using the train() function. The model is trained on the o_dataset dataframe and uses the glmnet method. The function also specifies that the function should tune the model parameters using 5-fold cross-validation.
+- The function then creates a new observation dataframe called new_observation. The new observation dataframe contains the eight numeric values that the function will use to predict the class.
+- The function then predicts the class of the new observation using the predict() function. The function returns the predicted class as a string value.
+```
+O_Classifier <- function(vector_values) {
+  # (Install and load necessary packages)
+  # (Read and preprocess the dataset)
+  
+  # (Train the model using glmnet)
+  
+  # (Create a new observation with random values)
+  new_observation <- data.frame(
+    V1 = 1.116036242,
+    V2 = 0.838743267,
+    V3 = 0.000550746,
+    V4 = 0.767142275,
+    V5 = 0.094321112,
+    V6 = 0.929259996,
+    V7 = 0.110389814,
+    V8 = 0.0806573
+  )
+  
+  # (Make predictions using the trained model)
+  predicted_class <- predict(model, new_observation)
+  
+  return(predicted_class)
+}
+
+# Example usage:
+o_class <- O_Classifier(vector_values)
+print(o_class)
+```
 
 
