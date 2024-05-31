@@ -140,3 +140,8 @@ Accuracy Calculation: The accuracy was calculated as the ratio of correctly clas
 2. Test Set/Samples:
 Dataset Selection: We utilized diverse datasets, including dataset_b0.csv, c0.csv, and dataset_o0.csv, to evaluate the adaptability and robustness of our algorithms across various domains.
 Randomized Sampling: To ensure unbiased evaluation, we employed randomized sampling techniques to split the datasets into training and testing sets.
+
+
+### Recommendations
+- Three classification functions are successfully implemented in R, enabling the classification of numerical values using preset criteria and machine learning models. 
+- The functions enable flexibility for a range of datasets and serve as a basis for additional analysis and automation.
