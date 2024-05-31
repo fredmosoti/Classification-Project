@@ -134,3 +134,9 @@ print(o_class)
 - The class vector output for C_Classifier ('cw' or 'cb').
 - The predicted class for O_Classifier ('o0', 'o1', ..., 'o9').
 
+### Description of the Method Used to Compare Algorithms
+1. Comparative Analysis:
+Accuracy Calculation: The accuracy was calculated as the ratio of correctly classified instances to the total number of instances. Mathematically, accuracy = (TP + TN) / (TP + TN + FP + FN), where TP = True Positives, TN = True Negatives, FP = False Positives, FN = False Negatives.
+2. Test Set/Samples:
+Dataset Selection: We utilized diverse datasets, including dataset_b0.csv, c0.csv, and dataset_o0.csv, to evaluate the adaptability and robustness of our algorithms across various domains.
+Randomized Sampling: To ensure unbiased evaluation, we employed randomized sampling techniques to split the datasets into training and testing sets.
