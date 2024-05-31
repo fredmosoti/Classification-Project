@@ -4,6 +4,7 @@
 
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
+- [Classifier](#R-functions-for-classification)
 - [Recommendations](#recommendations)
 
 ### Project Overview
@@ -61,5 +62,33 @@ Step-by-step breakdown:
 - Input Validation: The function begins by checking if the input value is numeric using the is.numeric() function. If the input is not numeric, an error message is thrown using the stop() function, informing the user that the input must be a numeric value.
 - Threshold Calculation: The function calculates the median value of the X0.42232895672346293 column in the my_data dataframe using the median() function. This median value serves as the threshold for classification.
 - Classification Logic: Based on the input value and the calculated threshold, the function determines the class label. If the input value is greater than the threshold, the class is 'bo', and if it's less than or equal to the threshold, the class is 'bn'.
+
+#### C_Classifier:
+The C_Classifier function takes a vector of numeric values as input and returns a vector of strings of the same length as the input vector. Each element in the output vector is the class of its corresponding value in the input vector, either 'cb' or 'cw'.
+- The function first checks if the input vector is numeric using the is.numeric() function. If the input vector is not numeric, it throws an error message using the stop() function.
+- The function then calculates the threshold value using the median () function. The threshold value is the median of the X115.20418513271142 column in the c0_data dataframe. This threshold value is used to classify the input vector values.
+- For each value in the input vector, the function compares it to the threshold value. If the value is greater than the threshold value, the function returns 'cw'. Otherwise, it returns 'cb'.
+```
+C_Classifier <- function(vector_values) {
+  if (!is.numeric(vector_values)) {
+    stop("The input must be a numeric vector.")
+  }
+  classes <- ifelse(vector_values > threshold, 'cw', 'cb')
+  return(classes)
+}
+
+# Example usage:
+vector_values <- c0_data$X115.20418513271142
+vector_classes <- C_Classifier(202.9106214) # pick any value
+print(vector_classes)
+```
+Step-by-step breakdown:
+
+- Input Validation: Similar to the B_Classifier function, the C_Classifier function also checks if the input vector is numeric using the is.numeric() function. If the input is not numeric, an error message is displayed using the stop() function.
+
+- Threshold Calculation: The function determines the median value of the X115.20418513271142 column in the c0_data dataframe using the median() function. This median value serves as the threshold for classification.
+
+- Vector Classification: The function iterates through the input vector, classifying each element based on the threshold value. If an element is greater than the threshold, it's assigned the class 'cw', and if it's less than or equal to the threshold, it's assigned the class 'cb'
+
 
 
