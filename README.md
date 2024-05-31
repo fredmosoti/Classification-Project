@@ -129,5 +129,8 @@ O_Classifier <- function(vector_values) {
 o_class <- O_Classifier(vector_values)
 print(o_class)
 ```
-
+### Expected Outputs:
+- The class output for B_Classifier ('bo' or 'bn').
+- The class vector output for C_Classifier ('cw' or 'cb').
+- The predicted class for O_Classifier ('o0', 'o1', ..., 'o9').
 
